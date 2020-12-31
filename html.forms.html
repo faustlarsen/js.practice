@@ -1,0 +1,119 @@
+<!-- Text input example form in HTML -->
+    
+<form id="add">
+  <div class="form-group">
+    <label for="add1">1st number:</label>
+    <input id="add1" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="add2">2nd number:</label>
+    <input id="add2" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add!</button>
+</form>
+
+<!-- Text input retrieval example -->
+
+const number1 = parseInt($("#add1").val());
+const number2 = parseInt($("#add2").val());
+
+
+
+<!-- Select Boxes (DropDown) example from in HTML -->
+
+<select class="form-control" id="beverage">
+  <option>Coffee</option>
+  <option>Tea</option>
+  <option>Kombucha</option>
+  <option>Water</option>
+</select>
+
+<!-- OR -->
+
+<select class="form-control" id="beverage">
+  <option value="1">Coffee</option>
+  <option value="2">Tea</option>
+  <option value="3">Kombucha</option>
+  <option value="4">Water</option>
+</select>
+
+<!-- Select Boxes (DropDown) value retrieval example -->
+
+const beverage = $("#beverage").val();
+
+
+
+<!-- Radio Button example form in HTML -->
+
+<div class="radio">
+  <label>
+    <input type="radio" name="flavor" value="chocolate" checked>
+    Chocolate
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="flavor" value="vanilla">
+    Vanilla
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="flavor" value="cookiesandcream">
+    Cookies & Cream
+  </label>
+</div>
+
+<!-- Radio Button value retrieval example -->
+
+const flavor = $("input:radio[name=flavor]:checked").val();
+
+
+
+<!-- Checkbox example form in HTML-->
+
+<form id="transportation_survey">
+  <div class="form-group">
+    <p>In the past year, I have used the following modes of transportation to travel to work or school:</p>
+    <input type="checkbox" name="work-transportation" value="bike">Riding a bike.<br>
+    <input type="checkbox" name="work-transportation" value="car">Driving a car.<br>
+  </div>
+  <button type="submit">Submit Survey</button>
+</form>
+<span id="work-responses">
+  <p><b>You use the following methods of transportation to travel to work or school:</b></p>
+</span>
+
+<!-- Checkbox value retrieval example -->
+
+$("input:checkbox[name=work-transportation]:checked").each(function() {
+  const workTransportationMode = $(this).val();
+  $('#work-responses').append(workTransportationMode + "<br>");
+});
+
+
+
+<!-- Date example form in HTML-->
+
+<div class="form-group">
+  <label for="born">Date of birth:</label>
+  <input id="born" class="form-control" type="date">
+</div>
+
+<!-- Date value retrieval example -->
+
+const dob = $("#born").val();
+
+
+
+<!-- Color example form in HTML-->
+
+<div class="form-group">
+  <label for="color">What is your favorite color?</label>
+  <input id="color" class="form-control" type="color">
+</div>
+
+<!-- Color value retrieval example -->
+
+const favoriteColor = $("#color").val();
+
